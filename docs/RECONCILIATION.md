@@ -1,8 +1,8 @@
 # Repo reconciliation — Daftar Advisory, Calibre
 
 Three repositories describe Calibre and the house brand, and they had drifted apart.
-This file records which one is canonical for what, what was reconciled here, and what
-is still stale elsewhere. Reviewed 9 September 2026.
+This file records which one is canonical for what and how the drift was resolved.
+Reviewed 10 September 2026.
 
 ## Who owns what
 
@@ -58,32 +58,24 @@ It listed `/` as the Calibre diagnostic and `/daftar` as the firm page, and cred
 "Ledger design system". Neither route exists. It now maps the three real surfaces and
 carries the retired "hiring diagnostic" label nowhere.
 
-## Still stale, outside this repo
+## Reconciled in related repos
 
-These need a push to repositories this session cannot write to.
+Completed 10 September 2026:
 
-**`calibre-by-daftar` — publishes a second, outdated Calibre site.**
-`netlify.toml` publishes `calibre-website-bundle/`, and
-`.github/workflows/deploy-pages.yml` deploys the same folder to GitHub Pages on every
-push to `aalhin001`. That bundle still carries:
+- **`calibre-by-daftar` is now an explicit design archive.** Its Netlify configuration
+  and GitHub Pages workflow were removed in `Calibre-by-Daftar` PR #8, GitHub Pages was
+  disabled, and the two stale PRs that could republish the retired site were closed.
+  The design canvas,
+  deck, component cards, and old bundle remain as provenance. Its README points here
+  for the canonical site and warns that the old bundle must not be republished.
+- **`calibre-saas-claude` now records the website work as applied.** Its PR #3 updates the
+  2 September founder decision entry and points it to `daftaradvisory.com/calibre`.
+- **The booking shortcuts work again.** PR #37 routes `/book` and `/call` to `/scope`
+  with temporary redirects, replacing the unsupported `mailto:` targets.
 
-- the retired label "Hiring Decision Diagnostic", twice, including the `<title>`
-- the unsourced "Δ 41 pts" stat, twice — the exact item `BRAND.md` flagged
-- a "fit score", which `GUARDRAILS.md` §2 prohibits
-- the broad audience the deep research assessment narrowed away: HR leaders, talent
-  teams, hiring managers, rather than the finance leader choosing between finalists
-- `og:url` pointing at `calibre.daftaradvisory.com`, a different origin from the
-  `/calibre` path this repo serves
-
-Recommendation: retire the deployment. Delete `netlify.toml` and the Pages workflow, keep
-the repo as an archive of the design canvas, the deck and the component cards, and point
-its README at this repo. Republishing the bundle as-is puts retired claims back in public.
-
-**`calibre-saas-claude` — the founder decision log is behind reality.**
-The 2 Sep 2026 entry reads "Recommended changes to calibre.daftaradvisory.com: replace
-'hiring diagnostic' with 'Calibre Verdict' … source or remove the unsourced gap figure …
-Not yet applied." All of it has been applied on this repo's Calibre pages. The entry
-should be marked applied, and the URL corrected to the `/calibre` path.
+Live checks on 10 September returned 200 for `daftaradvisory.com/calibre`, with none of
+the retired claims above, and 404 for the former Netlify, GitHub Pages, and legacy custom
+domain URLs.
 
 ## Not changed, deliberately
 
