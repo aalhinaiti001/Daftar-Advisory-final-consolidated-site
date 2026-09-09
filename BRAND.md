@@ -17,12 +17,12 @@ diverge only in colour.** A reader must always know which one is speaking.
 ## Colour
 
 ### Daftar — cream & rust (the parent / the firm)
-| Role        | Token         | Hex        | Live-site status (`design/daftar-home.html`) |
-|-------------|---------------|------------|-----------------------------------------------|
-| Paper/cream | `--cream`     | `#F4F1EA`  | ✅ canonical (16×)                             |
-| Rust/accent | `--rust`      | `#B3502B`  | ❌ retired `#A8341F` live (78×) — conform      |
-| Ink         | `--ink`       | `#1A1814`  | ✅ canonical (49×)                             |
-| Soft band   | `--soft-band` | `#EFEBE1`  | ⚠️ not present; near-creams used instead       |
+| Role        | Token         | Hex        | Status on the Daftar canon surface (`app/daftar.css`) |
+|-------------|---------------|------------|--------------------------------------------------------|
+| Paper/cream | `--cream`     | `#F4F1EA`  | ✅ canonical                                            |
+| Rust/accent | `--rust`      | `#B3502B`  | ⚠️ `#A8341F` runs live — **recorded exception**, not a defect (see below) |
+| Ink         | `--ink`       | `#1A1814`  | ✅ canonical                                            |
+| Soft band   | `--soft-band` | `#EFEBE1`  | ✅ present as `--soft`                                  |
 
 ### Calibre — white & green (the product / by Daftar)
 | Role        | Token             | Hex        |
@@ -32,16 +32,16 @@ diverge only in colour.** A reader must always know which one is speaking.
 | Void/band   | `--cal-void`      | `#111214`  |
 | Card soft   | `--cal-card`      | `#F5F4F1`  |
 
-> **Approved exception — the live Calibre product surface (`calibre.daftaradvisory.com`).**
+> **Approved exception — the Calibre product surface (served at `/calibre` from this repo).**
 > Per Founder ruling, the shipped "Guesswork" design **overrides the v1.5 Calibre spec above**
 > for the live product site. It uses **Lora** (display/serif) + **Plus Jakarta Sans** (UI) — not
 > the shared Newsreader/Instrument/IBM Plex stack — and a themeable palette (default `ink`):
 > forest green `~#265147`/`#2B3A36` primary with a **clay `#B25B3C`** secondary accent and a
 > white/paper ground. The v1.5 rows above remain the *handbook ideal*; the live site is a
 > recorded exception, not a target to conform. (Daftar's own v1.5 stack is unaffected.)
-> **Open flag:** the hero's illustrative **"Δ 41 pts"** stat runs unsourced on the live site —
-> the Hiring-Decision Service Strategy v2's own evidence discipline requires naming the source
-> and never presenting it as settled fact. Sourcing is a content decision, left to the Founder.
+> **Flag closed on this repo's surface:** the unsourced **"Δ 41 pts"** hero stat was removed from
+> `design/calibre-home.html` / `-ar.html`. It still runs, twice, in the `calibre-by-daftar` bundle,
+> which publishes a second copy of the Calibre site — see `docs/RECONCILIATION.md`.
 
 **Colour rules (§03) — apply to Daftar; Calibre live surface is the exception noted above:**
 - One accent + one ground per brand. **No third accent. No gradients.**
@@ -79,20 +79,21 @@ record earns them.
 ## Retired — purge on sight
 - Font: **Fraunces** → Newsreader
 - Font: **JetBrains Mono** → IBM Plex Mono
-- Accent: rust **`#A8341F`** → `#B3502B` (incl. SVG loading mark)
+- Accent: rust **`#A8341F`** → `#B3502B` (incl. SVG loading mark) — *except* on the Daftar
+  canon surface, where `#A8341F` is the recorded exception below
 - The **`#A8341F → #D07B59` gradient** and the `#D07B59` tint — violate "no gradients /
   no third accent." **Remove the gradient; do not re-derive the tint.**
 - **`#842815`** link-hover — re-derive a darker shade from `#B3502B`, or drop.
 - Title: **"Principal"** → "Founder".
 
 ## Approved exception — the live Daftar home (`daftaradvisory.com`)
-> Per Founder ruling, the shipped Daftar home/About/Scope-builder design (baked from the
-> design-canvas export to `design/daftar-home.html`, served over `out/index.html`) is kept
-> **as-is on its own stack** and **overrides the v1.5 Daftar spec** for that surface: it uses
+> Per Founder ruling, the shipped Daftar home/About/Scope-builder design is kept **as-is on its
+> own stack** and **overrides the v1.5 Daftar spec** for that surface: it uses
 > **Fraunces** (display) + **Instrument Sans** (body) + **JetBrains Mono** (labels) and rust
 > **`#A8341F`** (with `#7d2415` hover), on cream `#F4F1EA` / ink `#1A1814`. It is ruled, not
 > shadowed, and uses no gradients. The v1.5 rows remain the handbook ideal; this is a recorded
-> exception, not a conformance target.
+> exception, not a conformance target. The stack now lives in the Next app (`app/daftar.css`);
+> `design/daftar-home.html` is the superseded export it was baked from and is no longer deployed.
 > **Known inconsistency:** the Arabic page `/ar` (Next app) stays on the **v1.5 canon** stack
 > (Newsreader / IBM Plex Mono / `#B3502B`). EN-home and `/ar` therefore differ; left as-is per
 > the "no `/ar` expansion" ruling. Flag for a future unify decision.
@@ -110,6 +111,12 @@ retired. Per the Deep Research Assessment, scope is the **narrow finance-hiring 
 (structured role definition, anchored scorecards, written memo) with **no psychometric or
 predictive-validity claims**; the broad talent service and work-style tool are deferred/removed.
 Any site/collateral copy calling Calibre a "hiring diagnostic" should move to "Calibre Verdict."
+
+**Normative for Calibre claims:** `product/METHOD.md` and `product/GUARDRAILS.md` in the
+`calibre-saas-claude` repo. Where site copy and those files disagree, those files win. In
+particular the method never sorts, ranks, or labels finalists, and never produces a "fit"
+score — so no surface may promise a ranked shortlist or a role-fit score. See
+`docs/RECONCILIATION.md`.
 
 ---
 
