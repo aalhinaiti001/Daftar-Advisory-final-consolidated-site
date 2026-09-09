@@ -38,8 +38,8 @@ npm run dev
 npm run build
 ```
 
-Exports a static site to `out/`. `public/_redirects` handles legacy URLs and points
-`/book` and `/call` at `ahmad@daftaradvisory.com` until a Microsoft Bookings URL exists.
+Exports a static site to `out/`. `public/_redirects` handles legacy URLs and routes
+`/book` and `/call` through `/scope` until a Microsoft Bookings URL exists.
 
 ## Downloadable checklists
 

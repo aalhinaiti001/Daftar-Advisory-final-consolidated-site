@@ -39,13 +39,11 @@
 /questions           /#daftar-faq           301
 
 # --- Booking ---------------------------------------------------------------
-# No Calendly account; Ahmad runs on Microsoft 365. Until a Microsoft
-# Bookings page exists, both shortcuts open a scoping-call email instead of
-# 404ing on a vendor link nobody signed up for. 302, not 301: swap the
-# destination for the Bookings URL the day it exists, no need to keep this
-# redirect alive as a permanent alias once it does.
-/book                mailto:ahmad@daftaradvisory.com?subject=Scoping%20call   302
-/call                mailto:ahmad@daftaradvisory.com?subject=Scoping%20call   302
+# No Microsoft Bookings page yet. Keep both shortcuts on-site by routing them
+# to the scope builder. 302, not 301: swap the destination for the Bookings
+# URL when it exists.
+/book                /scope                302
+/call                /scope                302
 
 # --- Deliberately absent ---------------------------------------------------
 # /articles/*, /services/*, /insights/*
