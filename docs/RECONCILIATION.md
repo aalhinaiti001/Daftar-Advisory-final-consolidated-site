@@ -14,7 +14,7 @@ Reviewed 10 September 2026.
 | Product architecture decisions | `calibre-saas-claude` — `product/DECISIONS.md` |
 
 `calibre-by-daftar` is **not canonical for anything**. It is an archive of earlier
-design work that still publishes a live copy of the Calibre site. See below.
+design work retained only as provenance. See below.
 
 Where two sources disagreed, the rule applied was *better grounded wins, not newest*.
 The method files won on claims because they are the only artefacts tied to the July 2026
@@ -46,7 +46,8 @@ The colour table marked `#A8341F` a defect to conform while the exception block 
 approved it for that same surface. The table now reads as the exception it is.
 
 **5. `BRAND.md` open flag on the unsourced "Δ 41 pts" stat is closed here.**
-It was removed from both Calibre pages in this repo. It still runs in `calibre-by-daftar`.
+It was removed from both Calibre pages in this repo. It remains only in the retired
+`calibre-by-daftar` bundle, which is retained as design provenance and is not deployed.
 
 **6. `BRAND.md` described a deploy path that no longer exists.**
 It said the Daftar home is served from `design/daftar-home.html` over `out/index.html`.
