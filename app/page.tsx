@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, NOTES, FAQ } from "./_data/practice";
 
 const DESC =
-  "Financial statements, audit preparation, technical review and deal support for founders and finance teams. One senior practitioner, a defined scope, and a file you keep.";
+  "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
 
 export const metadata: Metadata = {
   /* Names the actual services, not just the firm: "Daftar Advisory" alone
@@ -31,7 +31,7 @@ const REGISTER: [string, string][] = [
   ["Established", "2024"],
   ["Base", "Amman, Jordan"],
   ["Reach", "Jordan, GCC, MENA"],
-  ["Team", "Senior only"],
+  ["Model", "Founder led"],
   ["Every job leaves", "A model, method, or memo"],
 ];
 
@@ -55,7 +55,7 @@ export default function Home() {
               Finance work that feels <em>simple</em>, even when the issue is not.
             </h1>
             <p className="dft-lead">
-              Statements, audit preparation, technical review, deal support. One senior practitioner,
+              Statements, technical review, audit readiness, quality of earnings. A boutique firm,
               a defined scope, a file you keep.
             </p>
             <div className="dft-actions">

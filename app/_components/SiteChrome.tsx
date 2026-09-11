@@ -63,10 +63,10 @@ export function SiteHeader({ active }: { active: Page }) {
             <Link href="/calibre">Calibre</Link>
             <Link href="/ar" className="dft-lang" aria-label="العربية">ع</Link>
           </nav>
-          {/* /book 302s to a scoping-call mailto via public/_redirects (no
-              Calendly account); a CTA labelled "Book a call" should book a
-              call, not open the scope builder. */}
-          <a className="dft-btn-ghost dft-cta" href="/book">Book a call</a>
+          {/* Keep the CTA on the scope builder until the Microsoft Bookings
+              page for ahmad@daftaradvisory.com is ready. Then replace this
+              destination and the /book and /call redirects together. */}
+          <Link className="dft-btn-ghost dft-cta" href="/scope">Book a call</Link>
         </div>
       </div>
     </header>

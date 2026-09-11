@@ -7,7 +7,7 @@ const DESC =
   "IFRS 18 is mandatory from 1 January 2027, which makes FY2026 the comparative year being restated. What changes, what deliberately does not, the seven workstreams that take the longest, and a transition plan you can run.";
 const URL = "/knowledge/ifrs-18-transition-2026";
 const PUBLISHED = "2026-08-19";
-const MODIFIED = "2026-08-30";
+const MODIFIED = "2026-09-12";
 const PLAN_FILE = "/ifrs-18-transition-plan-2026.xlsx";
 
 export const metadata: Metadata = {
@@ -161,7 +161,7 @@ export default function Ifrs18Transition2026() {
             <span>·</span>
             <span>Published 19 August 2026</span>
             <span>·</span>
-            <span>Reviewed 30 August 2026</span>
+            <span>Reviewed 12 September 2026</span>
           </div>
         </section>
 
@@ -185,9 +185,13 @@ export default function Ifrs18Transition2026() {
               question.
             </p>
             <p>
-              EY has put this bluntly in its published guidance: the data and systems must effectively
-              be in place during 2026. That is not a warning about the deadline. It is a warning about
-              the year we are in.
+              The IFRS Foundation&rsquo;s transition materials make the sequence clear: retrospective
+              application means comparative information must be ready for the first IFRS 18 reports.
+              For a calendar year reporter, that makes 2026 a data and systems question, not merely a
+              2027 disclosure deadline. See the{" "}
+              <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-18-presentation-and-disclosure-in-financial-statements/">
+                IFRS Foundation&rsquo;s IFRS 18 overview
+              </a>.
             </p>
           </div>
         </section>
@@ -213,11 +217,14 @@ export default function Ifrs18Transition2026() {
                 calendar. Those are slower to move than a measurement adjustment ever is.
               </p>
               <p>
-                EY describes it as a major overhaul that will require most, if not all, IFRS reporters
-                to update the structure of their income statement, and as something that demands
-                judgement and technical knowledge rather than a mechanical re-mapping. Both halves of
-                that matter. The judgement is real, and it cannot be outsourced to a mapping table
-                built the week before year-end.
+                The issued standard introduces defined subtotals and categories in the statement of
+                profit or loss, together with disclosures for management defined performance measures.
+                That combination changes both structure and judgement; it cannot be reduced to a
+                mapping table built the week before year end. The{" "}
+                <a href="https://www.ifrs.org/content/dam/ifrs/project/primary-financial-statements/ifrs-standard/projectsummary-ifrs18-april2024.pdf">
+                  IFRS Foundation project summary
+                </a>{" "}
+                provides the primary overview.
               </p>
             </div>
           </div>
@@ -638,7 +645,7 @@ export default function Ifrs18Transition2026() {
 
         <section className="dft-wrap">
           <p className="dft-article-note">
-            Views are my own. This is a general commentary on IFRS 18 and not accounting advice. The
+            This is Daftar&rsquo;s general commentary on IFRS 18 and not accounting advice. The
             transition plan and the downloadable tracker are planning aids, not a compliance
             assessment. Confirm the requirements against the issued standards and your current local
             regulatory instructions before applying them.

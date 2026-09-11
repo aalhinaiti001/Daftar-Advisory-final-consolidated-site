@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, Eyebrow } from "../_components/SiteChrome";
 import { STEPS, EMAIL } from "../_data/practice";
 
 const DESC =
-  "A small advisory practice in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";
+  "A founder led finance advisory boutique in Amman, working across Jordan, the GCC and MENA. Every engagement ends with a working file you keep.";
 
 export const metadata: Metadata = {
   title: "About — Daftar Advisory",
@@ -46,7 +46,7 @@ export default function About() {
       <main className="dft-rise">
         <section className="dft-wrap dft-page-head">
           <Eyebrow tone="rust">§ 00 · About</Eyebrow>
-          <h1 className="dft-h1">A small practice, held to one standard.</h1>
+          <h1 className="dft-h1">A finance advisory boutique, held to one standard.</h1>
         </section>
 
         <section className="dft-section dft-section-about">

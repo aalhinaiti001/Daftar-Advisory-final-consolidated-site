@@ -35,7 +35,7 @@ diverge only in colour.** A reader must always know which one is speaking.
 > **Approved exception — the Calibre product surface (served at `/calibre` from this repo).**
 > Per Founder ruling, the shipped "Guesswork" design **overrides the v1.5 Calibre spec above**
 > for the live product site. It uses **Lora** (display/serif) + **Plus Jakarta Sans** (UI) — not
-> the shared Newsreader/Instrument/IBM Plex stack — and a themeable palette (default `ink`):
+> the shared Fraunces/Instrument/JetBrains stack — and a themeable palette (default `ink`):
 > forest green `~#265147`/`#2B3A36` primary with a **clay `#B25B3C`** secondary accent and a
 > white/paper ground. The v1.5 rows above remain the *handbook ideal*; the live site is a
 > recorded exception, not a target to conform. (Daftar's own v1.5 stack is unaffected.)
@@ -53,17 +53,23 @@ diverge only in colour.** A reader must always know which one is speaking.
 - Colour can drop out (mono, email, photocopy) — always back it with a second signal:
   the **monogram**, the **by Daftar** kicker, and the **§ chapter-prefix**.
 
-## Type (§04) — shared by both brands, whole
+## Type (§04)
+
+**Founder ruling, 12 September 2026 — Fraunces is the Daftar display face.**
+Fraunces is canonical for every Daftar surface, English and Arabic, and for the
+shared house system. Newsreader is retired. The live Calibre site remains on its
+separately approved Lora and Plus Jakarta Sans exception.
+
 | Role                     | Family              | Weights   |
 |--------------------------|---------------------|-----------|
-| Display / headlines      | **Newsreader**      | 400–600 (italic = wordmark voice) |
+| Display / headlines      | **Fraunces**        | 300–700 (italic = wordmark voice) |
 | Body / UI                | **Instrument Sans** | 400–600   |
-| Eyebrows / labels / data | **IBM Plex Mono**   | 400–500 (+3 tracking) |
+| Eyebrows / labels / data | **JetBrains Mono**  | 400–500 (+3 tracking) |
 
 All three are on Google Fonts (the site already `preconnect`s to `fonts.googleapis.com`).
 
 ## Layout & marks (§02, §06)
-- Monogram: single knockout letter in a solid tile, set in Newsreader; same corner radius
+- Monogram: single knockout letter in a solid tile, set in Fraunces; same corner radius
   and clearspace; **the kicker is never set in the serif.**
 - **Ruled, not shadowed** — sections divided by 1px rules, never drop shadow.
 - Base-8 spacing (8 · 16 · 24 · 48 · 80). Max content width 1080px; 80px gutters.
@@ -74,11 +80,16 @@ Plainly, with the working shown. Confidence without decoration. **Ahmad is "Foun
 on every surface — "Principal" is retired.** No cadence/superlative claims until the
 record earns them.
 
+**Founder ruling, 12 September 2026 — Daftar speaks as a boutique firm.** Site and
+collateral copy use "we" for the company. "We" is the firm, not a headcount claim:
+copy must not invent a team, staff numbers, or people who are not on the work. The
+senior-contact commitment remains explicit about who the client works with.
+
 ---
 
 ## Retired — purge on sight
-- Font: **Fraunces** → Newsreader
-- Font: **JetBrains Mono** → IBM Plex Mono
+- Font: **Newsreader** on Daftar surfaces → Fraunces
+- Font: **IBM Plex Mono** on Daftar surfaces → JetBrains Mono
 - Accent: rust **`#A8341F`** → `#B3502B` (incl. SVG loading mark) — *except* on the Daftar
   canon surface, where `#A8341F` is the recorded exception below
 - The **`#A8341F → #D07B59` gradient** and the `#D07B59` tint — violate "no gradients /
@@ -86,17 +97,12 @@ record earns them.
 - **`#842815`** link-hover — re-derive a darker shade from `#B3502B`, or drop.
 - Title: **"Principal"** → "Founder".
 
-## Approved exception — the live Daftar home (`daftaradvisory.com`)
-> Per Founder ruling, the shipped Daftar home/About/Scope-builder design is kept **as-is on its
-> own stack** and **overrides the v1.5 Daftar spec** for that surface: it uses
-> **Fraunces** (display) + **Instrument Sans** (body) + **JetBrains Mono** (labels) and rust
-> **`#A8341F`** (with `#7d2415` hover), on cream `#F4F1EA` / ink `#1A1814`. It is ruled, not
-> shadowed, and uses no gradients. The v1.5 rows remain the handbook ideal; this is a recorded
-> exception, not a conformance target. The stack now lives in the Next app (`app/daftar.css`);
-> `design/daftar-home.html` is the superseded export it was baked from and is no longer deployed.
-> **Known inconsistency:** the Arabic page `/ar` (Next app) stays on the **v1.5 canon** stack
-> (Newsreader / IBM Plex Mono / `#B3502B`). EN-home and `/ar` therefore differ; left as-is per
-> the "no `/ar` expansion" ruling. Flag for a future unify decision.
+## Approved colour exception — the live Daftar home (`daftaradvisory.com`)
+> Fraunces (display), Instrument Sans (body), and JetBrains Mono (labels) are the
+> Daftar type system everywhere. The live English surface retains the approved rust
+> **`#A8341F`** (with `#7d2415` hover) rather than the handbook's `#B3502B`, on cream
+> `#F4F1EA` / ink `#1A1814`. The Arabic surface still uses `#B3502B`; that colour
+> difference remains open. Arabic text continues to use IBM Plex Sans Arabic.
 
 ## Surface still on the retired stack (not yet ruled)
 - **`daftar-engagement-letter` skill** — spec references the retired stack; conform or record
@@ -128,8 +134,8 @@ score — so no surface may promise a ranked shortlist or a role-fit score. See
   /* Calibre */
   --cal-white: #FFFFFF;  --cal-green: #2C3A31;  --cal-void: #111214;  --cal-card: #F5F4F1;
   /* Type (shared) */
-  --font-display: "Newsreader", Georgia, serif;
+  --font-display: "Fraunces", Georgia, serif;
   --font-body: "Instrument Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 ```

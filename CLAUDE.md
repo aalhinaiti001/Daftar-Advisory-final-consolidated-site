@@ -31,15 +31,20 @@ All tokens are CSS custom properties scoped to the `.dft` class (not `:root`), s
 ```
 Spacing/radii/type scale are **not** tokenized as custom properties — they're literal values repeated per rule (radii are consistently `5px`–`6px`; measure is `min(1120px, calc(100% - 48px))` via `.dft-wrap`). Font sizes mostly use `clamp()` for fluid scaling (e.g. `.dft-h1 { font-size: clamp(2.8rem, 5.4vw, 4.6rem); }`).
 
-`BRAND.md` documents a **different, canonical** palette (`--rust: #B3502B`, `--cream: #F4F1EA`) that the live Daftar site does **not** use — `daftar-home.html` / `app/daftar.css` are a recorded **approved exception** (rust `#A8341F`, Fraunces/JetBrains Mono stack). Don't "fix" this drift; it's intentional per BRAND.md's own note.
+`BRAND.md` documents a different rust (`--rust: #B3502B`) from the live Daftar site's
+`#A8341F`; that colour difference is an approved exception. Fraunces and JetBrains
+Mono are canonical across Daftar surfaces as of 12 September 2026.
 
 ### 1b. Daftar legacy / Arabic — `app/globals.css` (single-line, ~11 lines total)
 Tokens on bare `:root`, overridden by a `.daftar` class for the cream variant:
 ```css
-:root{--ink:#17181b;--green:#2c3a31;--paper:#fff;--soft:#f5f4f1;--muted:#6e7175;--dim:#4a4c50;--rule:#e3e0d8;--accent:#2c3a31;--serif:'Newsreader',Georgia,serif;--sans:'Instrument Sans',Arial,sans-serif;--mono:'IBM Plex Mono',monospace}
-.daftar{--paper:#f4f1ea;--soft:#efebe1;--rule:#d8d2c4;--accent:#b3502b;--ink:#1a1814;--dim:#514c45;--muted:#6f665d;--serif:'Newsreader',Georgia,serif}
+:root{--ink:#17181b;--green:#2c3a31;--paper:#fff;--soft:#f5f4f1;--muted:#6e7175;--dim:#4a4c50;--rule:#e3e0d8;--accent:#2c3a31;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',Arial,sans-serif;--mono:'JetBrains Mono',monospace}
+.daftar{--paper:#f4f1ea;--soft:#efebe1;--rule:#d8d2c4;--accent:#b3502b;--ink:#1a1814;--dim:#514c45;--muted:#6f665d;--serif:'Fraunces',Georgia,serif}
 ```
-This is the file `/ar` and `/ar/knowledge/*` still run on — it uses **Newsreader**, not Fraunces, and rust `#b3502b`, matching the BRAND.md canon rather than the EN-home exception. `.ar` selectors additionally swap in `IBM Plex Sans Arabic`. This file is intentionally minified/single-line; don't reformat it as a drive-by change.
+This is the file `/ar` and `/ar/knowledge/*` still run on. It now uses Fraunces and
+JetBrains Mono for shared Latin display and label elements, while `.ar` selectors use
+IBM Plex Sans Arabic for Arabic text. Its rust remains `#b3502b`, unlike the English
+surface's approved `#a8341f`. The file is intentionally minified; do not reformat it.
 
 ### 1c. Calibre — inline `<style>` + Tailwind config, top of `design/calibre-home.html` / `-ar.html`
 Colors are CSS custom properties **fed into Tailwind** via `rgb(var(--c-x) / <alpha-value>)`, then swapped per `data-theme`:
@@ -53,9 +58,11 @@ tailwind.config = { theme: { extend: {
   fontFamily: { serif: ['Lora','serif'], sans: ['"Plus Jakarta Sans"','sans-serif'] },
 }}}
 ```
-Four themes exist (`ink` default, `clay`, `midnight`, plus base) toggled via `data-theme` on `<html>`, live-switchable through a dev-only `#tweakPanel` (strip before shipping a "final" design if asked). Per BRAND.md, this Lora/Plus-Jakarta/forest-green stack is an **approved exception** to Calibre's own canonical Newsreader/Instrument/mono spec — don't reconcile the two without an explicit ask.
+Four themes exist (`ink` default, `clay`, `midnight`, plus base) toggled via `data-theme` on `<html>`, live-switchable through a dev-only `#tweakPanel` (strip before shipping a "final" design if asked). Per BRAND.md, this Lora/Plus-Jakarta/forest-green stack is an **approved exception** to the shared Fraunces/Instrument/JetBrains house system — don't reconcile the two without an explicit ask.
 
-**Tokens BRAND.md flags as retired — do not reintroduce:** Fraunces→Newsreader, JetBrains Mono→IBM Plex Mono, `#A8341F`→`#B3502B`, any `#A8341F → #D07B59` gradient, `#842815` link-hover, the job title "Principal" (→"Founder").
+**Tokens BRAND.md flags as retired — do not reintroduce on Daftar surfaces:**
+Newsreader, IBM Plex Mono, any `#A8341F → #D07B59` gradient, `#842815` link-hover,
+and the job title "Principal". Fraunces, JetBrains Mono, and "Founder" are canonical.
 
 ---
 
@@ -90,7 +97,7 @@ Content is separated from markup in `app/_data/`:
   Calibre's two static HTML files pull Tailwind from the **Play CDN** (`<script src="https://cdn.tailwindcss.com">`) plus an inline `<style>` block — there is a code comment in the file itself flagging this as prototype-only and recommending a built stylesheet before real production use; that migration has not happened.
 - **Package manager:** npm (`package-lock.json` present). Only prod deps are `next`/`react`/`react-dom`; only dev deps are TS types + `typescript`. No linting config beyond Next's default (`next lint`), no test runner.
 - **Python tooling:** `scripts/*.py` (openpyxl) generate the downloadable `.xlsx` checklists from the JSON in `app/_data/`. Not part of the Next build; run manually (`pip install openpyxl && python3 scripts/build-audit-checklist.py`).
-- **Deploy:** Netlify. `netlify.toml`'s build command runs `next build` **then** copies the two Calibre HTML files into `out/calibre.html` and `out/ar/calibre.html` — Calibre is not part of the Next.js route tree at all, it's bolted on post-build. `public/_redirects` handles legacy URL redirects and the `/book`, `/call` → mailto shortcuts.
+- **Deploy:** Netlify. `netlify.toml`'s build command runs `next build` **then** copies the two Calibre HTML files into `out/calibre.html` and `out/ar/calibre.html` — Calibre is not part of the Next.js route tree at all, it's bolted on post-build. `public/_redirects` handles legacy URL redirects. `/book` and `/call`, plus the header CTA, stay on `/scope` until the Microsoft Bookings URL is live; update all three destinations together.
 
 ---
 

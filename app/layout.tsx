@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./daftar.css";
 
-const DESC = "Clear finance work for founders and finance teams: statements, audit readiness, technical review, deal support.";
+const DESC = "Clear finance work for founders and finance teams: statements, technical review, audit readiness, and quality of earnings.";
 
 /* Non-attest practice: the schema type is ProfessionalService, NOT
    AccountingService/FinancialService. Those imply licensed attest work the

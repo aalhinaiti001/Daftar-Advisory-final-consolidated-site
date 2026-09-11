@@ -39,9 +39,9 @@
 /questions           /#daftar-faq           301
 
 # --- Booking ---------------------------------------------------------------
-# No Microsoft Bookings page yet. Keep both shortcuts on-site by routing them
-# to the scope builder. 302, not 301: swap the destination for the Bookings
-# URL when it exists.
+# Microsoft Bookings is being prepared under ahmad@daftaradvisory.com. Keep
+# both shortcuts on-site until its public URL is ready. 302, not 301: replace
+# the destinations and the header CTA together when that URL exists.
 /book                /scope                302
 /call                /scope                302
 

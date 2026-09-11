@@ -15,7 +15,8 @@ export type Service = {
   deliverable: string;
 };
 
-export const SERVICE_ORDER: ServiceKey[] = ["statements", "audit", "review", "transaction"];
+/* Ordered by the house catalogue: A/01, A/02, A/03, C/03. */
+export const SERVICE_ORDER: ServiceKey[] = ["statements", "review", "audit", "transaction"];
 
 export const SERVICES: Record<ServiceKey, Service> = {
   statements: {
@@ -33,7 +34,7 @@ export const SERVICES: Record<ServiceKey, Service> = {
   },
   audit: {
     label: "Audit readiness",
-    ref: "A/02",
+    ref: "A/03",
     blurb: "Preparation before the auditor arrives, so the audit runs on your calendar.",
     outcome: "A prepared file and a list of open items, so the audit starts on evidence.",
     included: [
@@ -46,7 +47,7 @@ export const SERVICES: Record<ServiceKey, Service> = {
   },
   review: {
     label: "Technical review",
-    ref: "A/03",
+    ref: "A/02",
     blurb: "A second read on a number or a treatment, written to hold up.",
     outcome: "An independent view, with reasoning your auditor or board can follow.",
     included: [
@@ -58,17 +59,17 @@ export const SERVICES: Record<ServiceKey, Service> = {
     deliverable: "A technical memo with references",
   },
   transaction: {
-    label: "Transaction support",
-    ref: "B/01",
-    blurb: "Deal work: quality of earnings, working capital, the model.",
-    outcome: "What the numbers say before the money moves, and where the risk sits.",
+    label: "Quality of earnings",
+    ref: "C/03",
+    blurb: "A focused read on earnings quality, working capital, and the adjustments that matter.",
+    outcome: "A clear view of maintainable earnings and the risks behind the reported result.",
     included: [
-      "Testing earnings quality and working capital",
-      "The assumptions in the model that carry the value",
-      "A findings note for the people deciding",
+      "Testing reported earnings and normalising adjustments",
+      "Reading working capital and cash conversion",
+      "Tracing the findings to the records and management explanations",
     ],
-    excluded: ["Legal and tax structuring", "Valuation opinions for filing"],
-    deliverable: "A findings note and a reusable model",
+    excluded: ["Legal and tax due diligence", "A valuation or assurance opinion"],
+    deliverable: "A quality of earnings report and supporting workbook",
   },
 };
 
@@ -121,8 +122,9 @@ export const NOTES: { tag: string; title: string; href?: string }[] = [
     href: "/knowledge/audit-readiness-checklist",
   },
   {
-    tag: "UAE",
-    title: "Corporate tax, first season",
+    tag: "KSA",
+    title: "The Phase 2 readiness checklist",
+    href: "/knowledge/saudi-e-invoicing-phase-2-checklist",
   },
 ];
 

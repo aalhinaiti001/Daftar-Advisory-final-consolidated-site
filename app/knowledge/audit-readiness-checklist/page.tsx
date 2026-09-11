@@ -244,7 +244,7 @@ export default function AuditReadinessChecklist() {
 
         <section className="dft-wrap">
           <p className="dft-article-note">
-            Views are my own. This is a general preparation aid and not accounting or assurance
+            This is Daftar&rsquo;s general preparation aid and not accounting or assurance
             advice. It does not replace the requirements of the applicable auditing standards, and it
             is not a compliance assessment. Confirm what your audit requires against the issued
             standards and your auditor&rsquo;s own request list.
