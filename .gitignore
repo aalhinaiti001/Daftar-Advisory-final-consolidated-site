@@ -14,3 +14,6 @@
 
 # python bytecode from the scripts/ workbook builders
 __pycache__/
+
+# typescript incremental build cache
+tsconfig.tsbuildinfo

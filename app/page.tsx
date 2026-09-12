@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, Eyebrow } from "./_components/SiteChrome";
 import { SERVICE_ORDER, SERVICES, NOTES, FAQ } from "./_data/practice";
 
 const DESC =
-  "Financial statements, technical review, audit readiness and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
+  "Financial statements, technical accounting, audit readiness, group reporting and quality of earnings for founders and finance teams. A boutique firm, a defined scope, and a file you keep.";
 
 export const metadata: Metadata = {
   /* Names the actual services, not just the firm: "Daftar Advisory" alone
@@ -55,7 +55,7 @@ export default function Home() {
               Finance work that feels <em>simple</em>, even when the issue is not.
             </h1>
             <p className="dft-lead">
-              Statements, technical review, audit readiness, quality of earnings. A boutique firm,
+              Statements, technical accounting, audit readiness, group reporting, quality of earnings. A boutique firm,
               a defined scope, a file you keep.
             </p>
             <div className="dft-actions">
@@ -83,7 +83,7 @@ export default function Home() {
         <section id="services" className="dft-section dft-section-soft">
           <div className="dft-wrap">
             <Eyebrow>§ 01 · Services</Eyebrow>
-            <h2 className="dft-h2" style={{ marginBottom: 44 }}>Four lines of work. Each one ends with a file you own.</h2>
+            <h2 className="dft-h2" style={{ marginBottom: 44 }}>Five lines of work. Each one ends with a file you own.</h2>
             <div className="dft-ledger">
               {SERVICE_ORDER.map((key, i) => (
                 <article key={key}>

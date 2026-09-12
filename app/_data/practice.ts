@@ -1,9 +1,9 @@
 /* Content for the Daftar site. Shared by the home page and the scope builder
-   so the four service lines stay in step across both. Copy is deliberately
+   so the five service lines stay in step across both. Copy is deliberately
    free of hyphens and dashes, and kept short: this is the marketing surface,
    not the knowledge articles. */
 
-export type ServiceKey = "statements" | "audit" | "review" | "transaction";
+export type ServiceKey = "statements" | "audit" | "review" | "group" | "transaction";
 
 export type Service = {
   label: string;
@@ -15,15 +15,15 @@ export type Service = {
   deliverable: string;
 };
 
-/* Ordered by the house catalogue: A/01, A/02, A/03, C/03. */
-export const SERVICE_ORDER: ServiceKey[] = ["statements", "review", "audit", "transaction"];
+/* Ordered by the house catalogue: A/01, A/02, A/03, A/04, C/03. */
+export const SERVICE_ORDER: ServiceKey[] = ["statements", "review", "audit", "group", "transaction"];
 
 export const SERVICES: Record<ServiceKey, Service> = {
   statements: {
     label: "Financial statements",
     ref: "A/01",
-    blurb: "A full IFRS set, tied to the trial balance, ready for the auditor.",
-    outcome: "A complete IFRS set your auditor can work from.",
+    blurb: "Financial statements prepared from the trial balance under the applicable reporting framework, with workings an auditor can follow.",
+    outcome: "A complete financial statement package, tied to the underlying records and prepared for audit or management review.",
     included: [
       "Mapping the trial balance to the statement lines",
       "Drafting the statements and the notes",
@@ -35,21 +35,21 @@ export const SERVICES: Record<ServiceKey, Service> = {
   audit: {
     label: "Audit readiness",
     ref: "A/03",
-    blurb: "Preparation before the auditor arrives, so the audit runs on your calendar.",
+    blurb: "Preparation before fieldwork starts, reducing avoidable delays once the auditor arrives.",
     outcome: "A prepared file and a list of open items, so the audit starts on evidence.",
     included: [
-      "A walk through what the auditor will test first",
-      "The request list answered in advance, with evidence",
+      "A walkthrough of balances and areas likely to receive audit attention",
+      "The audit request list prepared in advance, with supporting evidence organised and gaps identified",
       "A memo on the positions likely to be challenged",
     ],
     excluded: ["Acting as your auditor", "Signing an opinion"],
     deliverable: "The audit file and an open item register",
   },
   review: {
-    label: "Technical review",
+    label: "Accounting and IFRS technical advice",
     ref: "A/02",
     blurb: "A second read on a number or a treatment, written to hold up.",
-    outcome: "An independent view, with reasoning your auditor or board can follow.",
+    outcome: "An objective view, with reasoning your auditor, management, or board can follow.",
     included: [
       "Reading the position and the evidence behind it",
       "A written conclusion with the standard references",
@@ -58,23 +58,43 @@ export const SERVICES: Record<ServiceKey, Service> = {
     excluded: ["Preparing the underlying records", "Representing you to the regulator"],
     deliverable: "A technical memo with references",
   },
+  group: {
+    label: "Group reporting and consolidation",
+    ref: "A/04",
+    blurb: "A controlled group close from entity trial balances through eliminations to consolidated reporting.",
+    outcome: "A traceable consolidation file that management and the auditor can follow from entity balances to the group result.",
+    included: [
+      "Group reporting pack and trial balance mapping",
+      "Intercompany matching and consolidation eliminations",
+      "Investment, equity, NCI, and group level reconciliation checks where applicable",
+      "Consolidated cash flow and supporting bridges where in scope",
+    ],
+    excluded: ["Subsidiary bookkeeping", "The group audit opinion"],
+    deliverable: "The consolidation workbook, elimination schedules, and group reporting support file",
+  },
   transaction: {
     label: "Quality of earnings",
     ref: "C/03",
-    blurb: "A focused read on earnings quality, working capital, and the adjustments that matter.",
-    outcome: "A clear view of maintainable earnings and the risks behind the reported result.",
+    blurb: "A focused analysis of recurring earnings, working capital, cash conversion, and the adjustments that matter.",
+    outcome: "A supported view of recurring earnings and the adjustments or risks affecting the reported result.",
     included: [
-      "Testing reported earnings and normalising adjustments",
-      "Reading working capital and cash conversion",
+      "Revenue and margin analysis, with reported to adjusted earnings bridges where relevant",
+      "Assessment of recurring and nonrecurring items and proposed normalising adjustments",
+      "Working capital and cash conversion analysis",
       "Tracing the findings to the records and management explanations",
     ],
-    excluded: ["Legal and tax due diligence", "A valuation or assurance opinion"],
+    excluded: [
+      "Legal, tax, or commercial due diligence",
+      "Valuation",
+      "An audit, review, or assurance conclusion",
+      "Independent verification of information not available from the agreed records",
+    ],
     deliverable: "A quality of earnings report and supporting workbook",
   },
 };
 
 export const FOCUS = [
-  { key: "first", label: "First year under IFRS", adds: "Opening balances and transition disclosures" },
+  { key: "first", label: "First year under IFRS", adds: "Transition assessment, opening IFRS position, accounting policy conversion, required reconciliations, and transition disclosures" },
   { key: "group", label: "Group with subsidiaries", adds: "Consolidation, eliminations, group level checks" },
   { key: "open", label: "Auditor questions still open", adds: "A response file for the points raised" },
   { key: "board", label: "Board or investor deadline", adds: "A summary for readers outside finance" },
@@ -108,7 +128,7 @@ export const TIMING = [
 export const NOTES: { tag: string; title: string; href?: string }[] = [
   {
     tag: "IFRS 18",
-    title: "The comparative year is 2026",
+    title: "Why the 2026 comparative matters now",
     href: "/knowledge/ifrs-18-transition-2026",
   },
   {
@@ -132,7 +152,7 @@ export const FAQ = [
   {
     num: "01",
     q: "What does Daftar do?",
-    a: "Statements, audit preparation, technical review, deal numbers. We take the problem, not the function.",
+    a: "Financial statements, technical accounting, audit preparation, group reporting, and deal analysis. We take the problem, not the function.",
   },
   {
     num: "02",
@@ -145,7 +165,7 @@ export const FAQ = [
        questions each restated a commitment in section 03 word for word. */
     num: "03",
     q: "Do you audit the file?",
-    a: "No. Daftar is a non-attest practice. We prepare and review. We do not audit, and we do not sign an opinion.",
+    a: "No. Daftar is a non-attest practice. We prepare and advise. We do not audit, perform an assurance engagement, or sign an opinion.",
   },
 ];
 
